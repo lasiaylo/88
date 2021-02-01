@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    public Stat HP;
     public DialogueBehaviour dialogue;
-    public List<IAction> actions = new List<IAction>();
+    public Stat HP;
+    public List<Action> actions = new List<Action>();
 
     // Start is called before the first frame update
     void Start()
     {
-        actions.Add(new CountAttack());
         StartCoroutine(Act());
     }
 
@@ -20,8 +19,8 @@ public class EnemyBehaviour : MonoBehaviour
         while(HP > 0)
         {
             int i = Random.Range(0, actions.Count - 1);
-            IAction action = actions[i];
-            HP.Minus(1);
+            Action action = actions[i];
+
             yield return action.Perform(gameObject, dialogue);
         }
 

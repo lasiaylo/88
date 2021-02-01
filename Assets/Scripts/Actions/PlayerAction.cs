@@ -2,17 +2,22 @@
 using System.Collections;
 using UnityEngine;
 
-public abstract class PlayerAction : MonoBehaviour
+public class PlayerAction : MonoBehaviour
 {
-    private readonly IAction _Action;
-    private readonly DialogueBehaviour _Dialogue;
-    private readonly Stat _Stamina;
-    private float _StaminaCost;
 
-    public PlayerAction(GameObject player)
+    // Need a way to centralize information.
+    // would like to eventually have this injected from xml
+    [SerializeField] private Action _Action;
+    [SerializeField] private float StaminaCost; //Deducting from Stamina should be done outside of this class
+    private DialogueBehaviour _Dialogue;
+    private Stat _Stamina;
+    private GameObject _Target; //Should be list
+
+    public void Start()
     {
-        _Stamina = player.GetComponent<PlayerBehaviour>().Stamina;
-        _Dialogue = player.GetComponent<PlayerBehaviour>().Dialogue;
+        _Stamina = GetComponent<PlayerBehaviour>().Stamina;
+        _Dialogue = GetComponent<PlayerBehaviour>().Dialogue;
+        _Target = GameObject.Find("Enemy");
     }
 
     public void Perform()
@@ -21,8 +26,9 @@ public abstract class PlayerAction : MonoBehaviour
         // Stamina should stay down a bit before regening
         // Reward players for doing an action right when stamina recharges?
         //    Prevent spam by having timers - similar to teching
-        _Stamina.Minus(_StaminaCost);
+        Debug.Log("WHOAHHH");
+        _Stamina.Minus(StaminaCost);
         StartCoroutine(_Stamina.ResetOverTime());
-        StartCoroutine(_Action.Perform(gameObject, _Dialogue));
+        StartCoroutine(_Action.Perform(_Target, _Dialogue));
     }
 }

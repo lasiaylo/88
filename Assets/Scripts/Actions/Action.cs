@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public interface IAction
+public abstract class Action : ScriptableObject
 {
-    IEnumerator Perform(GameObject gameObject, DialogueBehaviour dialogue);
+    public abstract IEnumerator Perform(GameObject gameObject, DialogueBehaviour dialogue);
 }
