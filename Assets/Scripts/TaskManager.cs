@@ -125,7 +125,6 @@ public class Task : IFlushable
 	/// Begins execution of the coroutine
 	public void Start ()
 	{
-		Debug.Log("DOES THIS WORK");
 		/*if(Running)
 			task.Restart();
 		else*/

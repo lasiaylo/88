@@ -22,9 +22,9 @@ public class OldStat
 
     public void SetValueOverTime(float target, float? tick = null, float? ticksPerSecond = null)
     {
-        Target.TicksPerSecond = ticksPerSecond ?? _TicksPerSecond;
-        Target.Tick = tick ?? _Tick;
-        Target.TargetVal = target;
+        //Target.TicksPerSecond = ticksPerSecond ?? _TicksPerSecond;
+        //Target.Tick = tick ?? _Tick;
+        Target.SetTargetVal(target);
     }
 
     public float GetValue() => Target.Val;

@@ -9,7 +9,7 @@ public class Stat : ScriptableObject, ISerializationCallbackReceiver
     public Target Target;
     public bool ResetOnDeserialize = true;
 
-    public void Awake()
+    public void OnEnable()
     {
         Target = new Target(_Stat, _Tick, _TicksPerSecond);
     }
@@ -27,7 +27,7 @@ public class Stat : ScriptableObject, ISerializationCallbackReceiver
     {
         Target.TicksPerSecond = ticksPerSecond ?? _TicksPerSecond;
         Target.Tick = tick ?? _Tick;
-        Target.TargetVal = target;
+        Target.SetTargetVal(target);
     }
 
     public float GetValue() => Target.Val;
@@ -36,25 +36,24 @@ public class Stat : ScriptableObject, ISerializationCallbackReceiver
 
     public void AddOverTime(float delta, float? tick = null, float? ticksPerSecond = null)
     {
-        SetValueOverTime(GetValue() + delta, tick, ticksPerSecond);
+        SetValueOverTime(Target.GetTargetVal() + delta, tick, ticksPerSecond);
         //trigger add event
     }
 
     public void Minus(float delta) => SetValue(GetValue() - delta);
 
-    public void MinusOverTime(float delta, float tick = 0, float ticksPerSecond = 0)
+    public void MinusOverTime(float delta, float? tick = null, float? ticksPerSecond = null)
     {
-        SetValueOverTime(GetValue() - delta, tick, ticksPerSecond);
+        SetValueOverTime(Target.GetTargetVal() - delta, tick, ticksPerSecond);
         // trigger minus event
     }
 
     public void Reset()
     {
         SetValue(_Stat);
-        Target.InstantSet(_Stat);
     }
 
-    public void ResetOverTime(float tick = 0, float ticksPerSecond = 0)
+    public void ResetOverTime(float? tick = null, float? ticksPerSecond = null)
     {
         SetValueOverTime(_Stat, tick, ticksPerSecond);
     }

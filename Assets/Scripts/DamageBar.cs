@@ -18,6 +18,6 @@ public class DamageBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rt.localScale = new Vector3(Mathf.Clamp(Stat.Target.TargetVal / Stat.GetStat(), 0, 1), rt.localScale.y, rt.localScale.z);
+        rt.localScale = new Vector3(Mathf.Clamp(Stat.Target.GetTargetVal() / Stat.GetStat(), 0, 1), rt.localScale.y, rt.localScale.z);
     }
 }

@@ -11,7 +11,7 @@ public class EnemyBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Act());
+        Task.Get(Act());
     }
 
     private IEnumerator Act()

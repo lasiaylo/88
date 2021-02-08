@@ -30,7 +30,7 @@ public class PlayerAction : MonoBehaviour
         {
             _Stamina.Minus(StaminaCost);
             _Stamina.ResetOverTime();
-            _Action.Perform(_Target, _Dialogue);
+            Task.Get(_Action.Perform(_Target, _Dialogue));
 
         }
     }
