@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf87ab0e2a99c47dd8d7a1d14cc1c8c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stat: {fileID: 11400000, guid: a09331f8489a74bba810db684b7118e0, type: 2}
+  Stat: {fileID: 11400000, guid: 74b1208c8a1224ee3a6493590a5580d5, type: 2}
 --- !u!1 &247481808
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 324d30f0257654d9fa10f1f044d925f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stat: {fileID: 11400000, guid: a09331f8489a74bba810db684b7118e0, type: 2}
+  Stat: {fileID: 11400000, guid: 74b1208c8a1224ee3a6493590a5580d5, type: 2}
 --- !u!114 &996590839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -730,6 +730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: {fileID: 1996904350}
   HP: {fileID: 11400000, guid: a09331f8489a74bba810db684b7118e0, type: 2}
+  targetObject: {fileID: 1812281049}
   actions:
   - {fileID: 11400000, guid: c4a45c6ecabf0447fbb96525dbaf9838, type: 2}
 --- !u!1 &1253312547
@@ -1072,6 +1073,7 @@ GameObject:
   - component: {fileID: 1812281051}
   - component: {fileID: 1812281053}
   - component: {fileID: 1812281052}
+  - component: {fileID: 1812281055}
   - component: {fileID: 1812281050}
   m_Layer: 0
   m_Name: Player
@@ -1089,11 +1091,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1812281049}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ebc2088b32454385bd86730e92de5e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 46f92209d4991490eb1e587b2a6b1133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Action: {fileID: 11400000, guid: f4c1afc8f0c064ec39fc3a5a0fd3fc24, type: 2}
-  StaminaCost: 20
+  ActionsList:
+  - {fileID: 11400000, guid: f4c1afc8f0c064ec39fc3a5a0fd3fc24, type: 2}
+  - {fileID: 11400000, guid: 496ff8ff34ec04b66b944c40813258a3, type: 2}
+  _Dialogue: {fileID: 1996904350}
+  _Target: {fileID: 1219107552}
 --- !u!4 &1812281051
 Transform:
   m_ObjectHideFlags: 0
@@ -1157,19 +1162,30 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1812281050}
         m_MethodName: Perform
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Player Attack
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 4d78f901-ab2c-4275-a8a1-ab359d036485
     m_ActionName: Player/Attack[/Keyboard/z]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1812281050}
+        m_MethodName: Perform
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Player Guard
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6c705e89-df8c-4279-b40e-bb348a0fefc2
     m_ActionName: Player/Guard[/Keyboard/x]
   - m_PersistentCalls:
@@ -1217,6 +1233,21 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1812281055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812281049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2056132ee4c634f07b322988e5edefdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: {fileID: 11400000, guid: 74b1208c8a1224ee3a6493590a5580d5, type: 2}
+  Defense: {fileID: 0}
+  guard: {fileID: 11400000, guid: 496ff8ff34ec04b66b944c40813258a3, type: 2}
 --- !u!1 &1967986439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,7 +1373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abcd428e657ba4a789dba4c942ff377b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharactersPerSecond: 30
+  CharactersPerSecond: 50
 --- !u!114 &1996904351
 MonoBehaviour:
   m_ObjectHideFlags: 0

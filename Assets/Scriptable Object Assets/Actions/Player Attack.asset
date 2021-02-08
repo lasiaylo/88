@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8b30faf5c6149d5a85d1c4224bb663, type: 3}
   m_Name: Player Attack
   m_EditorClassIdentifier: 
+  StaminaCost: 20

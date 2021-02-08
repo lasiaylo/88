@@ -6,8 +6,8 @@ public class EnemyBehaviour : MonoBehaviour
 {
     public DialogueBehaviour dialogue;
     public Stat HP;
+    public GameObject targetObject;
     public List<Action> actions = new List<Action>();
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,7 @@ public class EnemyBehaviour : MonoBehaviour
             int i = Random.Range(0, actions.Count - 1);
             Action action = actions[i];
 
-            yield return action.Perform(gameObject, dialogue);
+            yield return action.Perform(targetObject, dialogue);
         }
 
         //Die animation

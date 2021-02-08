@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Stat: 100
   _Tick: 0.25
-  _TicksPerSecond: 88
+  _TicksPerSecond: 300
   Target:
-    Val: 80
+    Val: 100
     TargetVal: 100
     Tick: 0.25
-    TicksPerSecond: 88
+    TicksPerSecond: 300
   ResetOnDeserialize: 1

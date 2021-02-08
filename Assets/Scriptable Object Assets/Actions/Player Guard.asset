@@ -9,15 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718417daff688463fa62d65949ac6a3b, type: 3}
-  m_Name: Enemy_HP
+  m_Script: {fileID: 11500000, guid: ce1e681c964c14f5ea2983663868d249, type: 3}
+  m_Name: Player Guard
   m_EditorClassIdentifier: 
-  _Stat: 100
-  _Tick: 0.25
-  _TicksPerSecond: 88
-  Target:
-    Val: 100
-    TargetVal: 100
-    Tick: 0.25
-    TicksPerSecond: 88
-  ResetOnDeserialize: 1
+  StaminaCost: 50
+  Status: 1
+  _Duration: 2
