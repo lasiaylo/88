@@ -5,14 +5,13 @@ using System.Collections;
 
 public class PlayerAttack : Action
 {
-    private EnemyBehaviour enemy;
+    public StatObject targetStat;
     private const int POWER = 10;
 
     public override IEnumerator Perform(GameObject gameObject, DialogueBehaviour dialogue)
     {
-        enemy = gameObject.GetComponent<EnemyBehaviour>(); //inefficient to grab this every time. should cache.
-        enemy.HP.Minus(POWER);
+        Stat hp = gameObject.GetComponent<EnemyBehaviour>().HPObject.stat; //inefficient to grab this every time. should cache.
+        yield return hp.MinusOverTime(POWER);
         dialogue.Display("You attack Judgement!"); // really need central place
-        yield break;
     }
 }

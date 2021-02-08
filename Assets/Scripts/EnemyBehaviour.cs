@@ -5,12 +5,14 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     public DialogueBehaviour dialogue;
-    public Stat HP;
+    public StatObject HPObject;
     public List<Action> actions = new List<Action>();
+    public Stat HP;
 
     // Start is called before the first frame update
     void Start()
     {
+        HP = HPObject.stat;
         StartCoroutine(Act());
     }
 

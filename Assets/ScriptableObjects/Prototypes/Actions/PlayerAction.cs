@@ -15,7 +15,7 @@ public class PlayerAction : MonoBehaviour
 
     public void Start()
     {
-        _Stamina = GetComponent<PlayerBehaviour>().Stamina;
+        _Stamina = GetComponent<PlayerBehaviour>().Stamina.stat;
         _Dialogue = GetComponent<PlayerBehaviour>().Dialogue;
         _Target = GameObject.Find("Enemy");
     }
@@ -27,8 +27,12 @@ public class PlayerAction : MonoBehaviour
         // Reward players for doing an action right when stamina recharges?
         //    Prevent spam by having timers - similar to teching
         Debug.Log("WHOAHHH");
-        _Stamina.Minus(StaminaCost);
-        StartCoroutine(_Stamina.ResetOverTime());
-        StartCoroutine(_Action.Perform(_Target, _Dialogue));
+        if (_Stamina.GetValue() == _Stamina.GetStat())
+        {
+            _Stamina.Minus(StaminaCost);
+            StartCoroutine(_Stamina.ResetOverTime());
+            StartCoroutine(_Action.Perform(_Target, _Dialogue));
+
+        }
     }
 }

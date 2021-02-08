@@ -4,8 +4,8 @@ using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour
 {
     public DialogueBehaviour Dialogue;
-    public Stat HP;
-    public Stat Stamina;
+    public StatObject HP;
+    public StatObject Stamina;
     
     // Start is called before the first frame update
     void Start()

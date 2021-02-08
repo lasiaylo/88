@@ -10,32 +10,32 @@ public class Stat
     [SerializeField] private float _Value;
     [SerializeField] private float _Tick;
     [SerializeField] private int _TicksPerSecond;
-    public float Delta { get; private set; }
+    public float Target;
 
     public static implicit operator float(Stat stat) => stat._Value;
     public static implicit operator bool(Stat stat) => stat._Value > 0;
 
-    public void SetStat(float target)
-    {
-        _Stat = target;
-    }
+    public void SetStat(float newStat) => _Stat = newStat;
 
     public float GetStat() => _Stat;
 
-    public void SetValue(float target) => _Value = target;
+    public void SetValue(float newValue)
+    {
+        _Value = Target = newValue;
+    }
 
     public IEnumerator SetValueOverTime(float target, float tick = 0, float ticksPerSecond = 0)
     {
+        Target = target;
         float oldValue = _Value;
         tick = tick.IsZero() ? _Tick : tick;
-        tick = target < oldValue ? -Mathf.Abs(tick) : Mathf.Abs(tick);
+        tick = Target < oldValue ? -Mathf.Abs(tick) : Mathf.Abs(tick);
         ticksPerSecond = ticksPerSecond.IsZero() ? _TicksPerSecond : ticksPerSecond;
-        float min = target < oldValue ? target : oldValue;
-        float max = target < oldValue ? oldValue : target;
-        while (oldValue != target)
+        float min = Target < oldValue ? target : oldValue;
+        float max = Target < oldValue ? oldValue : Target;
+        while (oldValue != Target)
         {
             _Value = Mathf.Clamp(oldValue += tick, min, max);
-            Delta = Mathf.Abs(target - _Value);
             yield return new WaitForSeconds(1 / ticksPerSecond);
         }
     }
