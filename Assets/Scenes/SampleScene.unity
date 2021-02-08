@@ -208,7 +208,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf87ab0e2a99c47dd8d7a1d14cc1c8c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statObject: {fileID: 11400000, guid: 4dcdbde93669b4eccb00647e163efca4, type: 2}
+  Stat: {fileID: 11400000, guid: a09331f8489a74bba810db684b7118e0, type: 2}
+--- !u!1 &247481808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 247481810}
+  - component: {fileID: 247481809}
+  m_Layer: 0
+  m_Name: TaskManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &247481809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247481808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d70463c8b6743a8a41fa0589c655f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &247481810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247481808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &299496081
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,7 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 324d30f0257654d9fa10f1f044d925f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StatObject: {fileID: 11400000, guid: 4dcdbde93669b4eccb00647e163efca4, type: 2}
+  Stat: {fileID: 11400000, guid: a09331f8489a74bba810db684b7118e0, type: 2}
 --- !u!114 &996590839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,15 +729,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 1996904350}
-  HPObject: {fileID: 11400000, guid: 4dcdbde93669b4eccb00647e163efca4, type: 2}
+  HP: {fileID: 11400000, guid: a09331f8489a74bba810db684b7118e0, type: 2}
   actions:
   - {fileID: 11400000, guid: c4a45c6ecabf0447fbb96525dbaf9838, type: 2}
-  HP:
-    _Stat: 0
-    _Value: 0
-    _Tick: 0
-    _TicksPerSecond: 0
-    Target: 0
 --- !u!1 &1253312547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,9 +1070,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1812281051}
+  - component: {fileID: 1812281053}
   - component: {fileID: 1812281052}
   - component: {fileID: 1812281050}
-  - component: {fileID: 1812281053}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1084,8 +1121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dialogue: {fileID: 1996904350}
-  HP: {fileID: 11400000, guid: 4e3feabd0c5cd4b3486034d54ada7453, type: 2}
-  Stamina: {fileID: 11400000, guid: a42bbf836f1ab4bf1b6df44504da6cea, type: 2}
+  HP: {fileID: 11400000, guid: 74b1208c8a1224ee3a6493590a5580d5, type: 2}
+  Stamina: {fileID: 11400000, guid: b58a9c66b80cb4c03a1a47063357f2c3, type: 2}
 --- !u!114 &1812281053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1626,7 +1663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 324d30f0257654d9fa10f1f044d925f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StatObject: {fileID: 11400000, guid: a42bbf836f1ab4bf1b6df44504da6cea, type: 2}
+  Stat: {fileID: 11400000, guid: b58a9c66b80cb4c03a1a47063357f2c3, type: 2}
 --- !u!1 &2115234482
 GameObject:
   m_ObjectHideFlags: 0

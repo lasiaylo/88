@@ -1,18 +1,15 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 
-[CreateAssetMenu(fileName = "Stat", menuName = "Stat", order = 0)]
-public class Stat : ScriptableObject, ISerializationCallbackReceiver
+[Serializable]
+public class OldStat
 {
     [SerializeField] private float _Stat;
     [SerializeField] private float _Tick;
     [SerializeField] private int _TicksPerSecond;
-    public Target Target;
+    public Target Target = new Target();
     public bool ResetOnDeserialize = true;
-
-    public void Awake()
-    {
-        Target = new Target(_Stat, _Tick, _TicksPerSecond);
-    }
 
     public void SetStat(float val) => _Stat = val;
 
@@ -58,14 +55,4 @@ public class Stat : ScriptableObject, ISerializationCallbackReceiver
     {
         SetValueOverTime(_Stat, tick, ticksPerSecond);
     }
-
-    public void OnAfterDeserialize()
-    {
-        if (ResetOnDeserialize)
-        {
-            Reset();
-        }
-    }
-
-    public void OnBeforeSerialize() { }
 }

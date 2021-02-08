@@ -9,11 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4eb2444723184931bfd6ffdda1e3a51, type: 3}
-  m_Name: Player_HP
+  m_Script: {fileID: 11500000, guid: 718417daff688463fa62d65949ac6a3b, type: 3}
+  m_Name: Player_Stamina
   m_EditorClassIdentifier: 
-  stat:
-    _Stat: 100
-    _Value: 100
-    _Tick: 1
-    _TicksPerSecond: 20
+  _Stat: 100
+  _Tick: 0.25
+  _TicksPerSecond: 88
+  Target:
+    Val: 80
+    TargetVal: 100
+    Tick: 0
+    TicksPerSecond: 0
+  ResetOnDeserialize: 1

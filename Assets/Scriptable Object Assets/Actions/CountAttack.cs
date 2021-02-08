@@ -7,9 +7,8 @@ public class CountAttack : Action
     public override IEnumerator Perform(GameObject gameObject, DialogueBehaviour dialogue)
     {
         dialogue.Display("Judgement started counting");
+        //dialogue.Display("3...");
         yield return new WaitForSeconds(2f);
-        dialogue.Display("3...");
-        //yield return new WaitForSeconds(2f);
         //dialogue.Display("2...");
         //yield return new WaitForSeconds(2f);
         //dialogue.Display("1...");
@@ -20,6 +19,5 @@ public class CountAttack : Action
         EnemyBehaviour enemy = gameObject.GetComponent<EnemyBehaviour>();
 
         //yield return enemy.HP.MinusOverTime(50, 1);
-        yield break;
     }
 }
