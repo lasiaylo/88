@@ -209,49 +209,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Stat: {fileID: 11400000, guid: 74b1208c8a1224ee3a6493590a5580d5, type: 2}
---- !u!1 &247481808
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 247481810}
-  - component: {fileID: 247481809}
-  m_Layer: 0
-  m_Name: TaskManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &247481809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247481808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14d70463c8b6743a8a41fa0589c655f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &247481810
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247481808}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &299496081
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,9 +265,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Guard
-
-'
+  m_text: "[x] \nGuard\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: da97b3ed0b90d44f9adc6562437f367d, type: 2}
   m_sharedMaterial: {fileID: 2898841340944348703, guid: da97b3ed0b90d44f9adc6562437f367d,
@@ -595,7 +550,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -144.67432, y: -147.41205}
-  m_SizeDelta: {x: 247.50195, y: 67.07434}
+  m_SizeDelta: {x: 247.50195, y: 84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1098437440
 MonoBehaviour:
@@ -645,6 +600,9 @@ GameObject:
   - component: {fileID: 1219107554}
   - component: {fileID: 1219107553}
   - component: {fileID: 1219107555}
+  - component: {fileID: 1219107556}
+  - component: {fileID: 1219107557}
+  - component: {fileID: 1219107558}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -710,7 +668,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219107552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.38, z: 0}
+  m_LocalPosition: {x: 0, y: 1.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -729,10 +687,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 1996904350}
-  HP: {fileID: 11400000, guid: a09331f8489a74bba810db684b7118e0, type: 2}
+  Health: {fileID: 0}
   targetObject: {fileID: 1812281049}
   actions:
   - {fileID: 11400000, guid: c4a45c6ecabf0447fbb96525dbaf9838, type: 2}
+--- !u!114 &1219107556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219107552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed01a66608e7e4cd19dd4f6b25c56f54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: {fileID: 11400000, guid: a09331f8489a74bba810db684b7118e0, type: 2}
+  Defense: {fileID: 0}
+  dialogue: {fileID: 1996904350}
+--- !u!114 &1219107557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219107552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d51b44ce74984deabe6367ccbd04bdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextPrefab: {fileID: 7177778791226463942, guid: dc47affaf098b41edaeae6d1e32c976f,
+    type: 3}
+  MinXVelocity: -3
+  MaxXVelocity: 3
+  MinYVelocity: 8
+  MaxYVelocity: 12
+--- !u!114 &1219107558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219107552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 781ade07e3de94d70a4b926acadb362d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Intensity: 0.3
+  Decay: 0.02
+  XMultiplier: 1
+  YMultiplier: 0
 --- !u!1 &1253312547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,8 +1290,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -420.17432, y: -147.41205}
-  m_SizeDelta: {x: 243.50195, y: 67.07434}
+  m_AnchoredPosition: {x: -414.17432, y: -147.41205}
+  m_SizeDelta: {x: 243.50195, y: 84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1967986441
 MonoBehaviour:
@@ -1527,9 +1534,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Attack
-
-'
+  m_text: "[z] \nAttack\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: da97b3ed0b90d44f9adc6562437f367d, type: 2}
   m_sharedMaterial: {fileID: 2898841340944348703, guid: da97b3ed0b90d44f9adc6562437f367d,

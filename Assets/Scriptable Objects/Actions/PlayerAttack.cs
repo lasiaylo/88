@@ -9,8 +9,8 @@ public class PlayerAttack : PlayerAction
 
     public override IEnumerator Perform(GameObject gameObject, DialogueBehaviour dialogue)
     {
-        Stat hp = gameObject.GetComponent<EnemyBehaviour>().HP; //inefficient to grab this every time. should cache.
-        hp.MinusOverTime(_Power);
+        Health health = gameObject.GetComponent<EnemyHealth>(); //inefficient to grab this every time. should cache.
+        health.Damage(_Power);
         //dialogue.Display("You attack Judgement!"); // really need central place
         yield break;
     }
