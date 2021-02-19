@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718417daff688463fa62d65949ac6a3b, type: 3}
+  m_Script: {fileID: 11500000, guid: c4eb2444723184931bfd6ffdda1e3a51, type: 3}
   m_Name: Enemy_HP
   m_EditorClassIdentifier: 
   _Stat: 100
   _Tick: 0.25
   _TicksPerSecond: 88
   Target:
-    Val: 100
-    TargetVal: 100
+    Val: -10
+    TargetVal: -10
     Tick: 0.25
     TicksPerSecond: 88
   ResetOnDeserialize: 1

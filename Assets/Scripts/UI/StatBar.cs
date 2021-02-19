@@ -7,16 +7,16 @@ public class StatBar : MonoBehaviour
 
     public Stat Stat;
 
-    private RectTransform rt;
+    private RectTransform rectTransform;
 
     // Start is called before the first frame update
     public void Start()
     {
-        rt = GetComponent<RectTransform>();
+        rectTransform = GetComponent<RectTransform>();
     }
     // Update is called once per frame
     public void Update()
     {
-        rt.localScale = new Vector3(Mathf.Clamp(Stat.GetValue() / Stat.GetStat(), 0, 1), rt.localScale.y, rt.localScale.z);
+        rectTransform.localScale = new Vector3(Mathf.Clamp(Stat.GetValue() / Stat.GetStat(), 0, 1), rectTransform.localScale.y, rectTransform.localScale.z);
     }
 }

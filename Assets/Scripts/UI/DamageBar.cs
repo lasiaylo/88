@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-// NEED TO REFACTOR
+// NEED TO REFACTOR. BAD BAD BAD.
 public class DamageBar : MonoBehaviour
 {
     public Stat Stat;
 
-    private RectTransform rt;
+    private RectTransform rectTransform;
 
     public void Start()
     {
-        rt = GetComponent<RectTransform>();
+        rectTransform = GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        rt.localScale = new Vector3(Mathf.Clamp(Stat.Target.GetTargetVal() / Stat.GetStat(), 0, 1), rt.localScale.y, rt.localScale.z);
+        rectTransform.localScale = new Vector3(Mathf.Clamp(Stat.Target.GetTargetVal() / Stat.GetStat(), 0, 1), rectTransform.localScale.y, rectTransform.localScale.z);
     }
 }

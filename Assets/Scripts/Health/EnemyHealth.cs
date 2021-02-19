@@ -24,7 +24,7 @@ public class EnemyHealth : Health
         // Shake sprite
         // spawn hp text
 
-        // Ideall should be event
+        // Ideally should be event
     }
 
     public override void Die()
