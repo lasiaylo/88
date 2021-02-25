@@ -4,23 +4,32 @@ using System.Collections;
 public class PlayerHealth : Health
 {
     public PlayerGuard guard;
-    public AudioSource damageSound;
-    public AudioSource damageGuardedSound;
+    public AudioClip damagedAudio;
+    public AudioClip guardedAudio;
+
+    private AudioSource audioSource;
+
+    public void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public override void Damage(float damage)
     {
-        if (guard.Status == GuardStatus.Guarding)
-        {
-            // Send Player Guard Event
-            damageGuardedSound.Play();
-            Debug.Log("WHOAH! A block!");
-        } else
+        if (guard.Status != GuardStatus.Guarding)
         {
             // TODO: Send Player Damage Event
             // TODO: Screen Shake
             // TODO: Noise
-            damageSound.Play();
+            audioSource.PlayOneShot(damagedAudio);
             HP.MinusOverTime(damage);
+
+        } else
+        {
+
+            // Send Player Guard Event
+            audioSource.PlayOneShot(guardedAudio);
+            Debug.Log("WHOAH! A block!");
         }
     }
 

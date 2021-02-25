@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: ce1e681c964c14f5ea2983663868d249
+guid: 5af92193d831c4497a8fc03983cce9f0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - guardAudio: {fileID: 8300000, guid: adf738038a7b445d697e1a90cf59a51b, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

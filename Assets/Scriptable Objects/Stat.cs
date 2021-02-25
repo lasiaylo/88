@@ -10,12 +10,12 @@ public class Stat : ScriptableObject, ISerializationCallbackReceiver
     [SerializeField] private float _Stat;
     [SerializeField] private float _Tick;
     [SerializeField] private int _TicksPerSecond;
-    public Target Target;
+    public Approacher Target;
     public bool ResetOnDeserialize = true;
 
     public void OnEnable()
     {
-        Target = new Target(_Stat, _Tick, _TicksPerSecond);
+        Target = new Approacher(_Stat, _Tick, _TicksPerSecond);
     }
 
     public void SetStat(float val) => _Stat = val;

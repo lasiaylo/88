@@ -12,12 +12,13 @@ public enum GuardStatus
 public class PlayerGuard : PlayerAction
 {
     public GuardStatus Status;
+    public AudioClip guardAudio;
     [SerializeField] private float _Duration;
 
     public override IEnumerator Perform(GameObject gameObject, DialogueBehaviour dialogue)
     {
-        Debug.Log("WHOAH, NIce Guards");
         Status = GuardStatus.Guarding;
+        gameObject.GetComponent<AudioSource>().PlayOneShot(guardAudio); // Should cache/ write caching utility
 
         yield return new WaitForSeconds(_Duration);
 

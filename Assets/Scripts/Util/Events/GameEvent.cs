@@ -19,7 +19,4 @@ namespace Events {
             listeners.Remove(listener);
         }
     }
-
-    [CreateAssetMenu(fileName = "BoolEvent", menuName = "Events/Bool", order = 0)]
-    public class BoolEvent : GameEvent<bool> { }
 }

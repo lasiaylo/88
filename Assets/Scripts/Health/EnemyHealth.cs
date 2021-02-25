@@ -1,30 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using Events;
 
+// Maybe get rid of EnemyHealth altogether and let it all be handled by IntEvents
 public class EnemyHealth : Health
 {
     [SerializeField] private DialogueBehaviour dialogue;
-    private TextSpawner spawner;
-    private Shaker shaker;
-
-    public void Awake()
-    {
-        spawner = GetComponent<TextSpawner>();
-        shaker = GetComponent<Shaker>();
-    }
-
+    public IntEvent damageEvent;
     public override void Damage(float damage)
     {
         HP.Minus(damage);
-        string msg = ((int)damage).ToString();
-        spawner.Spawn(msg);
-        shaker.Shake();
-
-        // Shake sprite
-        // spawn hp text
-
-        // Ideally should be event
+        damageEvent.Raise((int)damage);
     }
 
     public override void Die()

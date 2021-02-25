@@ -6,7 +6,4 @@ namespace Events {
         [SerializeField, NotNull] private GameEvent<T> gameEvent;
         public T value;
     }
-
-    public class BoolEventRaiser : GameEventRaiser<bool> { }
-
 }

@@ -23,4 +23,9 @@ public class TextSpawner : MonoBehaviour
             Random.Range(MinYVelocity, MaxYVelocity)
         );
     }
+
+    public void Spawn(int msg)
+    {
+        Spawn(msg.ToString());
+    }
 }

@@ -3,10 +3,10 @@
 public class Gravity : MonoBehaviour
 {
 
-    [SerializeField] private float ArcThreshold;
-    [SerializeField] private float ArcMult;
-    [SerializeField] private float FallSpeed;
-    [SerializeField] private float MaxFallSpeed;
+    [SerializeField] private float ArcThreshold = 1;
+    [SerializeField] private float ArcMult = 1;
+    [SerializeField] private float FallSpeed = 1 ;
+    [SerializeField] private float MaxFallSpeed = 1;
     private Rigidbody2D RigidBody;
 
     public void Awake()
