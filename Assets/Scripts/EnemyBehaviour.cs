@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Events;
 using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    public TextDisplayer dialogue;
     public EnemyHealth Health;
     public GameObject targetObject;
+    public StringEvent promptEvent;
+
     public List<Action> actions = new List<Action>();
-    // Start is called before the first frame update
     void Start()
     {
         Health = GetComponent<EnemyHealth>();
@@ -25,7 +26,7 @@ public class EnemyBehaviour : MonoBehaviour
             yield return action.Perform(targetObject);
         }
 
-        //Die animation
-        dialogue.Display("Judgement died violently.");
+        //TODO: Die animation
+        promptEvent.Raise("Judgement died violently.");
     }
 }

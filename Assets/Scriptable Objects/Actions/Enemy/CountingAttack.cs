@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using Events;
+using JetBrains.Annotations;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Counting Attack", menuName = "Actions/Enemy/Counting Attack", order = 0)]
 public class CountingAttack : Action
 {
     [SerializeField]
     private float Power, WaitTime;
     [SerializeField, Range(0, 1)]
-    private float Anticipation;
-    [SerializeField]
+    private float Anticipation; //Anticipation bar  - need a better name
+    [SerializeField, NotNull]
     public StringEvent speechEvent;
 
     public override IEnumerator Perform(params GameObject[] target)

@@ -9,6 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbc5238317eb346a986b34f7f7e23cf1, type: 3}
-  m_Name: Count Attack
+  m_Script: {fileID: 11500000, guid: c25a5faefc24b4cf390502b693138821, type: 3}
+  m_Name: CountingAttack
   m_EditorClassIdentifier: 
+  Power: 30
+  WaitTime: 3
+  Anticipation: 0
+  speechEvent: {fileID: 11400000, guid: 62a4091455ec74860bc629c020086ee9, type: 2}
