@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    public DialogueBehaviour dialogue;
+    public TextDisplayer dialogue;
     public EnemyHealth Health;
     public GameObject targetObject;
     public List<Action> actions = new List<Action>();
@@ -17,12 +17,12 @@ public class EnemyBehaviour : MonoBehaviour
 
     private IEnumerator Act()
     {
-        while(Health.GetHP().GetValue() > 0)
+        while (Health.GetHP().GetValue() > 0)
         {
             int i = Random.Range(0, actions.Count - 1);
             Action action = actions[i];
 
-            yield return action.Perform(targetObject, dialogue);
+            yield return action.Perform(targetObject);
         }
 
         //Die animation

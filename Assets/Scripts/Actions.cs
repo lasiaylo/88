@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Actions : MonoBehaviour
 {
     public List<PlayerAction> ActionsList;
-    [SerializeField] private DialogueBehaviour _Dialogue;
+    [SerializeField] private TextDisplayer _Dialogue;
     [SerializeField] private GameObject _Target;
 
     private Stat _Stamina;
@@ -30,7 +30,7 @@ public class Actions : MonoBehaviour
         {
             _Stamina.Minus(action.GetStaminaCost());
             _Stamina.ResetOverTime();
-            Task.Get(action.Perform(_Target, _Dialogue));
+            Task.Get(action.Perform(_Target));
         }
 
         // TODO: Play unable to perform action animation

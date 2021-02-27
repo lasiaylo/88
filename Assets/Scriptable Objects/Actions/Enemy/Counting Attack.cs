@@ -1,23 +1,30 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using Events;
 using UnityEngine;
 
 public class CountingAttack : Action
 {
-    public float Power;
-    public float WaitTime;
-    [Range(0, 1)]
-    public float Anticipation;
+    [SerializeField]
+    private float Power, WaitTime;
+    [SerializeField, Range(0, 1)]
+    private float Anticipation;
+    [SerializeField]
+    public StringEvent speechEvent;
 
-    public override IEnumerator Perform(GameObject gameObject, DialogueBehaviour dialogue)
+    public override IEnumerator Perform(params GameObject[] target)
     {
-        dialogue.Display("3...");
+        // TODO: Should be for loop
+        speechEvent.Raise("3..");
         yield return Wait();
 
-        dialogue.Display("2...");
+        speechEvent.Raise("2..");
         yield return Wait();
 
-        dialogue.Display("1...");
+        speechEvent.Raise("1..");
+        yield return Wait();
+
+        target[0].GetComponent<PlayerHealth>().Damage(Power);
+
         yield return Wait();
     }
 

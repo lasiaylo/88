@@ -2,10 +2,12 @@
 using TMPro;
 using UnityEngine;
 
-public class DialogueBehaviour : MonoBehaviour
+// Reveals text
+[RequireComponent(typeof(TextMeshProUGUI))]
+public class TextDisplayer : MonoBehaviour
 {
     private TextMeshProUGUI TextMesh;
-    public int CharactersPerSecond = 30;
+    public int CharactersPerSecond = 50;
 
     public void Awake()
     {

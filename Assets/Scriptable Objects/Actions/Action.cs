@@ -3,5 +3,5 @@ using UnityEngine;
 
 public abstract class Action : ScriptableObject
 {
-    public abstract IEnumerator Perform(GameObject gameObject, DialogueBehaviour dialogue);
+    public abstract IEnumerator Perform(params GameObject[] target);
 }

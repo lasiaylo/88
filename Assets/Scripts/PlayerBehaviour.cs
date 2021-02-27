@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    public DialogueBehaviour Dialogue;
+    public TextDisplayer Dialogue;
     public Stat HP;
     public Stat Stamina;
     

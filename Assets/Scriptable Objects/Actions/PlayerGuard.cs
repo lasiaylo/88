@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
 public enum GuardStatus
 {
     Guarding,
@@ -15,10 +14,10 @@ public class PlayerGuard : PlayerAction
     public AudioClip guardAudio;
     [SerializeField] private float _Duration;
 
-    public override IEnumerator Perform(GameObject gameObject, DialogueBehaviour dialogue)
+    public override IEnumerator Perform(GameObject[] target)
     {
         Status = GuardStatus.Guarding;
-        gameObject.GetComponent<AudioSource>().PlayOneShot(guardAudio); // Should cache/ write caching utility
+        target[0].GetComponent<AudioSource>().PlayOneShot(guardAudio); // Should cache/ write caching utility
 
         yield return new WaitForSeconds(_Duration);
 
