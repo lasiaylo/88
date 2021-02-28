@@ -13,11 +13,9 @@ MonoBehaviour:
   m_Name: Player_Stamina
   m_EditorClassIdentifier: 
   _Stat: 100
-  _Tick: 0.25
-  _TicksPerSecond: 300
   Target:
     Val: 100
     TargetVal: 100
-    Tick: 0.25
-    TicksPerSecond: 300
+    Tick: 1
+    TicksPerSecond: 75
   ResetOnDeserialize: 1

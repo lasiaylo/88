@@ -1,11 +1,20 @@
-﻿using UnityEngine;
+﻿using ScriptableObjects.Prototypes;
+using UnityEngine;
+
+
+public enum FillStatus
+{
+    Empty,
+    Partway,
+    Full,
+}
 
 // THIS IS GETTING REALLY BLOATED :(
 // SHOULD REALLY REFACTOR
 [CreateAssetMenu(fileName = "Stat", menuName = "Stat", order = 0)]
-public class Stat : ScriptableObject, ISerializationCallbackReceiver
+public class Stat : DefaultScriptableObject
 {
-    [SerializeField] private float _Stat = default;
+    public float _Stat = default;
     public Approacher Target;
     public bool ResetOnDeserialize = true;
 
@@ -41,7 +50,7 @@ public class Stat : ScriptableObject, ISerializationCallbackReceiver
         // trigger minus event
     }
 
-    public void Reset()
+    public override void Reset()
     {
         SetValue(_Stat);
     }
@@ -51,13 +60,33 @@ public class Stat : ScriptableObject, ISerializationCallbackReceiver
         SetValueOverTime(_Stat, tick, ticksPerSecond);
     }
 
-    public void OnAfterDeserialize()
+    public float GetFillRatio()
     {
-        if (ResetOnDeserialize)
+        return GetValue() / GetStat();
+    }
+
+
+    // Can probably refactor to separate Fill class
+    public FillStatus GetStatus()
+    {
+        switch (GetFillRatio())
         {
-            Reset();
+            case 0:
+                return FillStatus.Empty;
+            case 1:
+                return FillStatus.Full;
+            default:
+                return FillStatus.Partway;
         }
     }
 
-    public void OnBeforeSerialize() { }
+    public bool IsFull()
+    {
+        return GetStatus() == FillStatus.Full;
+    }
+
+    public bool IsEmpty()
+    {
+        return GetStatus() == FillStatus.Empty;
+    }
 }

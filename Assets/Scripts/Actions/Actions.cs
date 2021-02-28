@@ -25,7 +25,7 @@ public class Actions : MonoBehaviour
     public void Perform(string actionName)
     {
         PlayerAction action = _actionsDict[actionName];
-        if (_Stamina.GetValue() == _Stamina.GetStat())
+        if (_Stamina.IsFull())
         {
             _Stamina.Minus(action.GetStaminaCost());
             _Stamina.ResetOverTime();

@@ -17,7 +17,7 @@ public abstract class Health : MonoBehaviour
     // Should figure out a better name
     public void CheckHP()
     {
-        if (HP.GetValue() == 0)
+        if (HP.IsEmpty())
         {
             // Should send Death Event
             Die();

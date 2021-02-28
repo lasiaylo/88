@@ -20,7 +20,7 @@ public class DialogueOpacity : MonoBehaviour
 
     void Update()
     {
-        image.color = Stamina.GetValue() == Stamina.GetStat()
+        image.color = Stamina.IsFull()
             ? originalColor
             : tempColor;
     }

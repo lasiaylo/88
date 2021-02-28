@@ -18,7 +18,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private IEnumerator Act()
     {
-        while (Health.GetHP().GetValue() > 0)
+        while (!Health.GetHP().IsEmpty())
         {
             int i = Random.Range(0, actions.Count - 1);
             Action action = actions[i];

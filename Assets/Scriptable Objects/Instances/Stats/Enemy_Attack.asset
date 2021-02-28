@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4eb2444723184931bfd6ffdda1e3a51, type: 3}
   m_Name: Enemy_Attack
   m_EditorClassIdentifier: 
-  _Stat: 0
-  _Tick: 0
-  _TicksPerSecond: 0
+  _Stat: 100
   Target:
-    Val: 0
-    TargetVal: 0
+    Val: 100
+    TargetVal: 100
     Tick: 0
     TicksPerSecond: 0
   ResetOnDeserialize: 1

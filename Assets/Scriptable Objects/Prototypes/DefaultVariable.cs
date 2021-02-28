@@ -7,7 +7,7 @@ namespace ScriptableObjects.Prototypes
         [SerializeField] private T _defaultVal = default;
         public T Val;
 
-        public override void ResetToDefault()
+        public override void Reset()
         {
             Val = _defaultVal;
         }
