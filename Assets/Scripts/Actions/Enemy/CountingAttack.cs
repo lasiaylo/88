@@ -3,15 +3,11 @@ using Events;
 using JetBrains.Annotations;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Counting Attack", menuName = "Actions/Enemy/Counting Attack", order = 0)]
 public class CountingAttack : Action
 {
-    [SerializeField]
-    private float Power, WaitTime;
-    [SerializeField, Range(0, 1)]
-    private float Anticipation; //Anticipation bar  - need a better name
-    [SerializeField, NotNull]
-    public StringEvent speechEvent;
+    [SerializeField] private float Power, WaitTime;
+    [SerializeField] private Stat stat;
+    [SerializeField, NotNull] private StringEvent speechEvent;
 
     public override IEnumerator Perform(params GameObject[] target)
     {
@@ -27,6 +23,7 @@ public class CountingAttack : Action
 
         target[0].GetComponent<PlayerHealth>().Damage(Power);
 
+        speechEvent.Raise("");
         yield return Wait();
     }
 

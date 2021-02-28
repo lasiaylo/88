@@ -19,7 +19,7 @@ public class Actions : MonoBehaviour
         foreach (PlayerAction action in ActionsList)
         {
             //Should use Enum instead of strings?
-            _actionsDict.Add(action.name, action);
+            _actionsDict.Add(action.GetType().ToString(), action);
         }
     }
 

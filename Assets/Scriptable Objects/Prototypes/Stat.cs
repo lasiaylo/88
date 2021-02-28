@@ -8,15 +8,8 @@
 public class Stat : ScriptableObject, ISerializationCallbackReceiver
 {
     [SerializeField] private float _Stat;
-    [SerializeField] private float _Tick;
-    [SerializeField] private int _TicksPerSecond;
     public Approacher Target;
     public bool ResetOnDeserialize = true;
-
-    public void OnEnable()
-    {
-        Target = new Approacher(_Stat, _Tick, _TicksPerSecond);
-    }
 
     public void SetStat(float val) => _Stat = val;
 
@@ -29,8 +22,6 @@ public class Stat : ScriptableObject, ISerializationCallbackReceiver
 
     public void SetValueOverTime(float target, float? tick = null, float? ticksPerSecond = null)
     {
-        Target.TicksPerSecond = ticksPerSecond ?? _TicksPerSecond;
-        Target.Tick = tick ?? _Tick;
         Target.SetTargetVal(target);
     }
 

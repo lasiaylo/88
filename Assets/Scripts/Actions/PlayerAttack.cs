@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[CreateAssetMenu(fileName = "Player Attack", menuName = "Actions/Player/Player Attack", order = 0)]
-
 public class PlayerAttack : PlayerAction
 {
     [SerializeField] private const int _Power = 10;
@@ -13,5 +11,4 @@ public class PlayerAttack : PlayerAction
         health.Damage(_Power);
         yield break;
     }
-
 }
