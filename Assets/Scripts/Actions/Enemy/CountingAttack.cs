@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class CountingAttack : Action
 {
-    [SerializeField] private float Power, WaitTime;
-    [SerializeField] private Stat stat;
+    [SerializeField] private float Power, WaitTime = default;
+    [SerializeField] private Stat stat = default;
     [SerializeField, NotNull] private StringEvent speechEvent;
 
     public override IEnumerator Perform(params GameObject[] target)

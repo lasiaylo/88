@@ -4,7 +4,7 @@ using Events;
 // Maybe get rid of EnemyHealth altogether and let it all be handled by IntEvents
 public class EnemyHealth : Health
 {
-    [SerializeField] private TextDisplayer dialogue;
+    [SerializeField] private TextDisplayer dialogue = default;
     public IntEvent damageEvent;
 
     public override void Damage(float damage)

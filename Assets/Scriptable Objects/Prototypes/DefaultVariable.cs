@@ -1,13 +1,16 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace ScriptableObjects.Prototypes {
-public abstract class DefaultVariable<T> : DefaultScriptableObject {
-    [SerializeField] private T _defaultVal;
-    public T Val;
+namespace ScriptableObjects.Prototypes
+{
+    public abstract class DefaultVariable<T> : DefaultScriptableObject
+    {
+        [SerializeField] private T _defaultVal = default;
+        public T Val;
 
-    public override void ResetToDefault() {
-        Val = _defaultVal;
+        public override void ResetToDefault()
+        {
+            Val = _defaultVal;
+        }
+
     }
-
-}
 }

@@ -7,7 +7,7 @@ using System;
 public class Approacher
 {
     public float Val;
-    [SerializeField] private float TargetVal;
+    [SerializeField] private float TargetVal = default;
     public float Tick;
     public float TicksPerSecond;
 

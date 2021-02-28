@@ -5,7 +5,7 @@ public abstract class PlayerAction : Action
 
     // Need a way to centralize information.
     // would like to eventually have this injected from xml
-    [SerializeField] private float StaminaCost; //Deducting from Stamina should be done outside of this class
+    [SerializeField] private float StaminaCost = default; //Deducting from Stamina should be done outside of this class
 
     public float GetStaminaCost() => StaminaCost;
     // Have Stamina as its own class that handles its own deductions

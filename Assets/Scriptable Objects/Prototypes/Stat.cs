@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
 
-
 // THIS IS GETTING REALLY BLOATED :(
 // SHOULD REALLY REFACTOR
-
 [CreateAssetMenu(fileName = "Stat", menuName = "Stat", order = 0)]
 public class Stat : ScriptableObject, ISerializationCallbackReceiver
 {
-    [SerializeField] private float _Stat;
+    [SerializeField] private float _Stat = default;
     public Approacher Target;
     public bool ResetOnDeserialize = true;
 

@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public class Actions : MonoBehaviour
 {
     public List<PlayerAction> ActionsList;
-    [SerializeField] private TextDisplayer _Dialogue;
-    [SerializeField] private GameObject _Target;
+    [SerializeField] private TextDisplayer _Dialogue = default;
+    [SerializeField] private GameObject _Target = default;
 
     private Stat _Stamina;
     private Dictionary<string, PlayerAction> _actionsDict;

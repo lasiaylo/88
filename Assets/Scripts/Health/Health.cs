@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public abstract class Health : MonoBehaviour
 {
-    [SerializeField] protected Stat HP;
-    [SerializeField] protected Stat Defense;
+    [SerializeField] protected Stat HP = default;
+    [SerializeField] protected Stat Defense = default;
 
     public abstract void Damage(float damage);
 

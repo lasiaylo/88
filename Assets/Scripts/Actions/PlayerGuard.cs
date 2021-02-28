@@ -11,7 +11,7 @@ public class PlayerGuard : PlayerAction
 {
     public GuardStatus Status;
     public AudioClip guardAudio;
-    [SerializeField] private float duration;
+    [SerializeField] private float duration = default;
 
     public override IEnumerator Perform(GameObject[] target)
     {
