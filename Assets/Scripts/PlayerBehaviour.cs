@@ -6,7 +6,7 @@ public class PlayerBehaviour : MonoBehaviour
     public TextDisplayer Dialogue;
     public Stat HP;
     public Stat Stamina;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +16,6 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

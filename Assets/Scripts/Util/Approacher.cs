@@ -15,7 +15,7 @@ public class Approacher
     private float max;
     private float tick;
 
-    public Task task = null;
+    private Task task = null;
 
     public void InstantSet(float val)
     {
