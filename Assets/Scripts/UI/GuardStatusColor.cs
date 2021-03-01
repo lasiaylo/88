@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class DamageBarColor : MonoBehaviour
+public class GuardStatusColor : MonoBehaviour
 {
     public PlayerGuard guard;
     public Color tempColor;

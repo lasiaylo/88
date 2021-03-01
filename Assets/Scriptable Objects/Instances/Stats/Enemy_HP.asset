@@ -13,11 +13,9 @@ MonoBehaviour:
   m_Name: Enemy_HP
   m_EditorClassIdentifier: 
   _Stat: 100
-  _Tick: 0.25
-  _TicksPerSecond: 88
   Target:
-    Val: -10
-    TargetVal: -10
+    Val: -30
+    TargetVal: -30
     Tick: 0.25
     TicksPerSecond: 88
   ResetOnDeserialize: 1

@@ -67,6 +67,7 @@ public class Stat : DefaultScriptableObject
 
 
     // Can probably refactor to separate Fill class
+    // And set up events
     public FillStatus GetStatus()
     {
         switch (GetFillRatio())
