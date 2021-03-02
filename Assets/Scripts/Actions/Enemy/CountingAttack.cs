@@ -8,6 +8,8 @@ public class CountingAttack : Action
     [SerializeField] private float Power, WaitTime = default;
     [SerializeField] private Stat stamina = default;
     [SerializeField, NotNull] private StringEvent speechEvent;
+    public AttackIndicator attack;
+    public ReadOnlyCurve curve;
 
     public override IEnumerator Perform(params GameObject[] target)
     {
@@ -25,11 +27,13 @@ public class CountingAttack : Action
         speechEvent.Raise("1..");
         stamina.SetValue(75);
 
+        attack.Move(curve.Val, WaitTime);
         yield return Wait();
 
         speechEvent.Raise("");
         target[0].GetComponent<PlayerHealth>().Damage(Power);
         stamina.SetValue(100);
+
         yield return Wait();
     }
 
